@@ -17,7 +17,7 @@ import ReactMarkdown from "react-markdown";
 const projectsData = {
     "1": {
         title: "HF",
-        repoUrl: "https://github.com/StacyAppleExtendedSolidAide/HF?tab=readme-ov-file#readme",
+        repoUrl: "https://github.com/StacyAppleExtendedSolidAide/HF.git",
         readmeUrl: "https://api.github.com/repos/StacyAppleExtendedSolidAide/HF/readme"
     },
     "2": {
@@ -45,15 +45,23 @@ function Projects() {
             // Appel à l'API pour récupérer le contenu du README
             fetch(project.readmeUrl)
                 .then((res) => {
-                    if (!res.ok) throw new Error("README introuvable");
+                    if (!res.ok) throw new Error(`Erreur HTTP: ${res.status}`);
                     return res.json();
                 })
                 .then((data) => {
                     // L'API GitHub retourne le contenu en base64
-                    const content = atob(data.content);
-                    setMarkdown(content);
+                    console.log("Data reçue:", data);
+                    if (data.content) {
+                        const content = atob(data.content);
+                        setMarkdown(content);
+                    } else {
+                        setMarkdown("Impossible de charger le README pour le moment.");
+                    }
                 })
-                .catch((_err) => setMarkdown("Impossible de charger le README pour le moment."))
+                .catch((err) => {
+                    console.error("Erreur lors du chargement:", err);
+                    setMarkdown("Impossible de charger le README pour le moment.")
+                })
                 .finally(() => setLoading(false));
         }
     }, [id, project]); // On recharge si l'ID change
