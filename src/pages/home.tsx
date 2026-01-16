@@ -16,6 +16,11 @@ function Home() {
         <div>
             <h1>Welcome to Stacy's website</h1>
             <img src={portrait} alt="Stacy Marcelon" style={{ maxWidth: '300px' }} />
+            <p>
+                Namaste ! My name is Stacy, a passionate developer and music enthusiast. <br />
+                This website is a space where I share my projects, thoughts, and musical creations. <br />
+                Feel free to explore and connect with me through the contact page!
+            </p>
         </div>
     );
 }

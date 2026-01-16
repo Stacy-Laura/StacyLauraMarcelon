@@ -30,6 +30,9 @@ function App() {
       <main className="content">
         <Outlet />
       </main>
+      <footer className="main-footer">
+        <p>© 2026 Stacy Marcelon. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
