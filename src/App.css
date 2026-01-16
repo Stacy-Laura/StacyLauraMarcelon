@@ -123,3 +123,31 @@
   border-radius: 8px;
   overflow-x: auto;
 }
+
+.home-footer {
+  font-size: 12px;
+}
+
+.portrait-stacy {
+  max-width: 300px;
+}
+
+@media (max-width: 800px) {
+  .home-footer {
+    font-size: 6px;
+  }
+
+  .portrait-stacy {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 400px) {
+  .home-footer {
+    font-size: 3px;
+  }
+
+  .portrait-stacy {
+    max-width: 75px;
+  }
+}

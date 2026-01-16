@@ -52,7 +52,13 @@ function Projects() {
                     // L'API GitHub retourne le contenu en base64
                     console.log("Data reçue:", data);
                     if (data.content) {
-                        const content = atob(data.content);
+                        // Décoder le base64 en UTF-8
+                        const binaryString = atob(data.content);
+                        const bytes = new Uint8Array(binaryString.length);
+                        for (let i = 0; i < binaryString.length; i++) {
+                            bytes[i] = binaryString.charCodeAt(i);
+                        }
+                        const content = new TextDecoder('utf-8').decode(bytes);
                         setMarkdown(content);
                     } else {
                         setMarkdown("Impossible de charger le README pour le moment.");
