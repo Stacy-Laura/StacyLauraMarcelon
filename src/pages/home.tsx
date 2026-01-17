@@ -15,7 +15,7 @@ import portrait from "../assets/img_0640.jpg";
 import "../App.css";
 function Home() {
     const creationDate = "15 January 2026";
-    const lastModificationDate = "16 January 2026";
+    const lastModificationDate = "17 January 2026";
 
     return (
         <div>
