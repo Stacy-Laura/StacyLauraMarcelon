@@ -10,20 +10,36 @@
                                              
     Date: 15 January 2026
 */
-import { Link, Outlet } from "react-router";
-
+import { Link, Outlet, useNavigate } from "react-router"; // Ajout de useNavigate
+import { projectsData } from "./data/projectsData"; // Import des données
 import "./App.css";
 
 function App() {
+  const navigate = useNavigate();
+
+  const handleProjectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const id = e.target.value;
+    if (id) {
+      navigate(`/projects/${id}`);
+    }
+  };
+
   return (
     <div className="app-container">
       <header className="main-header">
         <nav className="nav-bar">
           <Link to="/" className="nav-link">Accueil</Link>
           <Link to="/contact" className="nav-link">Contact</Link>
-          <Link to="/projects/1" className="nav-link">HF</Link>
-          <Link to="/projects/2" className="nav-link">SolidAide</Link>
-          <Link to="/projects/3" className="nav-link">Melody-Factory</Link>
+
+          {/* Le menu se construit tout seul ici */}
+          <select className="project-dropdown" onChange={handleProjectChange} defaultValue="">
+            <option value="" disabled>Mes Projets</option>
+            {Object.entries(projectsData).map(([id, project]) => (
+              <option key={id} value={id}>
+                {project.title}
+              </option>
+            ))}
+          </select>
         </nav>
       </header>
 
@@ -36,5 +52,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

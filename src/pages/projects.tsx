@@ -14,7 +14,7 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 
-const projectsData = {
+/*const projectsData = {
     "1": {
         title: "HF",
         repoUrl: "https://github.com/StacyAppleExtendedSolidAide/HF.git",
@@ -31,6 +31,8 @@ const projectsData = {
         readmeUrl: "https://api.github.com/repos/prescilliarosart/Melody-Factory/readme"
     }
 };
+*/
+import { projectsData } from "../data/projectsData";
 
 function Projects() {
     const { id } = useParams<{ id: string }>();
