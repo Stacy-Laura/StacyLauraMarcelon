@@ -21,6 +21,7 @@ import App from "./App";
 import Home from "./pages/home";
 import Contact from "./pages/contact";
 import Projects from "./pages/projects";
+import Skills from "./pages/skills";
 
 // router creation
 
@@ -31,6 +32,10 @@ const router = createHashRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/skills",
+        element: <Skills />,
       },
       {
         path: "/contact",

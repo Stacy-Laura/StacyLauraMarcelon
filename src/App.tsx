@@ -30,8 +30,9 @@ function App() {
         <nav className="nav-bar">
           <Link to="/" className="nav-link">Accueil</Link>
           <Link to="/contact" className="nav-link">Contact</Link>
+          <Link to="/skills" className="nav-link">Compétences</Link>
 
-          {/* Le menu se construit tout seul ici */}
+
           <select className="project-dropdown" onChange={handleProjectChange} defaultValue="">
             <option value="" disabled>Mes Projets</option>
             {Object.entries(projectsData).map(([id, project]) => (
