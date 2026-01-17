@@ -151,3 +151,44 @@
     max-width: 75px;
   }
 }
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skills-section {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.skills-table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.skill-icon {
+  width: 30px;
+  height: 30px;
+  filter: grayscale(20%);
+  transition: transform 0.3s;
+}
+
+.skill-item:hover .skill-icon {
+  transform: scale(1.2);
+  filter: grayscale(0%);
+}
