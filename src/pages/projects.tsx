@@ -80,6 +80,7 @@ function Projects() {
         <div className="project-container" style={{ textAlign: 'left', maxWidth: '800px', margin: '0 auto' }}>
             <h1>{project.title}</h1>
             <a href={project.repoUrl} target="_blank" rel="noreferrer">Voir sur GitHub</a>
+            <a href={project.Url} target="_blank" rel="noreferrer" style={{ marginLeft: '1rem' }}>Live Demo</a>
 
             <hr style={{ margin: '2rem 0' }} />
 
