@@ -11,20 +11,36 @@
     Creation date: 15 January 2026
     Last modification date: 16 January 2026
 */
+import { useOutletContext } from "react-router";
 import portrait from "../assets/img_0640.jpg";
 import "../App.css";
 function Home() {
+    const { lang } = useOutletContext<{ lang: string }>();
     const creationDate = "15 January 2026";
     const lastModificationDate = "17 January 2026";
 
+    const content = {
+        en: {
+            welcome: "Welcome to Stacy's website",
+            bio: "Namaste ! My name is Stacy, a passionate developer and music enthusiast. This website is a space where I share my projects, thoughts, and musical creations.",
+            cta: "Feel free to explore and connect with me through the contact page!"
+        },
+        fr: {
+            welcome: "Bienvenue sur le site de Stacy",
+            bio: "Namasté ! Je m'appelle Stacy, développeuse passionnée et amatrice de musique. Ce site est un espace où je partage mes projets, mes réflexions et mes créations musicales.",
+            cta: "N'hésitez pas à explorer et à me contacter via la page dédiée !"
+        }
+    };
+
+    const t = lang === "fr" ? content.fr : content.en;
+
     return (
         <div>
-            <h1>Welcome to Stacy's website</h1>
+            <h1>{t.welcome}</h1>
             <img className="portrait-stacy" src={portrait} alt="Stacy Marcelon" />
             <p>
-                Namaste ! My name is Stacy, a passionate developer and music enthusiast. <br />
-                This website is a space where I share my projects, thoughts, and musical creations. <br />
-                Feel free to explore and connect with me through the contact page!
+                {t.bio} <br />
+                {t.cta}
             </p>
 
             <footer className="home-footer" style={{ marginTop: '60px', textAlign: 'center', whiteSpace: 'pre', fontFamily: 'monospace', color: '#666' }}>

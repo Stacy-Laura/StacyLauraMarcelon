@@ -36,7 +36,7 @@ const skillsData = {
 function Skills() {
     return (
         <div className="skills-container">
-            <h1>Mes Compétences</h1>
+            <h1>Skills</h1>
 
             <div className="skills-grid">
                 <section className="skills-section">
@@ -52,7 +52,7 @@ function Skills() {
                 </section>
 
                 <section className="skills-section">
-                    <h2>Outils</h2>
+                    <h2>Tools</h2>
                     <div className="skills-table">
                         {skillsData.tools.map((tool) => (
                             <div key={tool.name} className="skill-item">
