@@ -1,16 +1,3 @@
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router";
-
-import "./index.css";
-import App from "./App";
-
-// page components
-
-import Home from "./pages/home";
-import Contact from "./pages/contact";
-import Projects from "./pages/projects";
-
-// router creation
 /*
     By Stacy
   ______                       _                    _          _             
@@ -23,7 +10,21 @@ import Projects from "./pages/projects";
                                              
     Date: 15 January 2026
 */
-const router = createBrowserRouter([
+import ReactDOM from "react-dom/client";
+import { createHashRouter, RouterProvider } from "react-router";
+
+import "./index.css";
+import App from "./App";
+
+// page components
+
+import Home from "./pages/home";
+import Contact from "./pages/contact";
+import Projects from "./pages/projects";
+
+// router creation
+
+const router = createHashRouter([
   {
     element: <App />,
     children: [
