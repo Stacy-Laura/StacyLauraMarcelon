@@ -13,11 +13,13 @@
 */
 import { useOutletContext } from "react-router";
 import portrait from "../assets/img_0640.jpg";
+import chanting from "../assets/Stacy-35.jpg";
 import "../App.css";
+
 function Home() {
     const { lang } = useOutletContext<{ lang: string }>();
     const creationDate = "15 January 2026";
-    const lastModificationDate = "17 January 2026";
+    const lastModificationDate = "06 February 2026";
 
     const content = {
         en: {
@@ -38,6 +40,8 @@ function Home() {
         <div>
             <h1>{t.welcome}</h1>
             <img className="portrait-stacy" src={portrait} alt="Stacy Marcelon" />
+            <img className="chanting-stacy" src={chanting} alt="Stacy chanting" />
+            
             <p>
                 {t.bio} <br />
                 {t.cta}
