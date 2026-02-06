@@ -39,8 +39,18 @@ function Home() {
     return (
         <div>
             <h1>{t.welcome}</h1>
-            <img className="portrait-stacy" src={portrait} alt="Stacy Marcelon" />
-            <img className="chanting-stacy" src={chanting} alt="Stacy chanting" />
+            <img 
+            className="portrait-stacy" 
+            src={portrait} 
+            alt="Stacy Marcelon" 
+            width={300}
+            />
+            <img 
+            className="chanting-stacy" 
+            src={chanting} 
+            alt="Stacy chanting" 
+            width={300}
+            />
             
             <p>
                 {t.bio} <br />
